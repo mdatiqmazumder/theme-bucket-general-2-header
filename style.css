@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    background: #ddd;
+}
+nav#mainNav {
+    background: #fff;
+    padding: 0 50px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+}
+
+img.navLogo {
+    width: 120px;
+    height: 100%;
+}
+
+ul.navLinks {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul.navLinks li {
+    line-height: 80px;
+    padding: 0px 10px;
+}
+
+ul.navLinks li a {
+    text-decoration: none;
+    padding: 10px;
+    color: #6f6d6f;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+ul.navLinks li a:hover{
+    color:#fec36b ;
+}
+
+.navDropdown {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.navDropdownContent {
+    background: #fff;
+    position: absolute;
+    display: block;
+    width: 200px;
+    text-align: center;
+    top: -780%;
+}
+
+ul.navDropdownContentList {
+    list-style: none;
+}
+.navDropdown:hover .navDropdownContent {
+    top: 100%;
+}
+#dropdownCheck{
+    display: none;
+}
+.mobileDropdownIcon{
+    display: none;
+    padding-right: 15px;
+    line-height: 80px;
+}
+.mobileDropdownIcon i{
+    font-size: 25px;
+}
+.mobileDropdownIcon i:nth-child(2){
+    display: none;
+}
+
+@media screen and (max-width:1070px){
+    nav#mainNav{
+        padding: 0 25px 0 50px;
+    }
+    ul.navLinks li {
+        padding: 0px 5px;
+    }
+}
+@media screen and (max-width:965px){
+    nav#mainNav{
+        padding: 0 15px 0 15px;
+    }
+    ul.navLinks{
+        display: block;
+        position: fixed;
+        top: 80px;
+        width: 100%;
+        padding: 0;
+        background-color: #e9e8e7;
+        left: -100%;
+        transition: all 0.5s ease;
+    }
+    ul.navLinks li{
+        line-height:40px;
+        border-bottom: 1px solid rgb(137, 132, 132);
+    }
+    #dropdownCheck:checked ~ ul.navLinks{
+        left: 0;
+    }
+    .mobileDropdownIcon{
+        display: block;
+    }
+    #dropdownCheck:checked ~ .mobileDropdownIcon i:nth-child(1){
+        display: block;
+    }
+    #dropdownCheck:checked ~ .mobileDropdownIcon i:nth-child(2){
+        display: none;
+    }
+    
+
+
+    
+    .navDropdownContent{
+        display: none;
+    }
+}
